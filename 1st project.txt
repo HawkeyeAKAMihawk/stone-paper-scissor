@@ -1,0 +1,55 @@
+STONE - PAPER - SCISSOR GAME
+
+#include<bits/stdc++.h>
+using namespace std;
+
+int main(){
+	int me;
+	std::random_device rd;
+	std::mt19937 generator(rd());
+	
+	std::uniform_int_distribution<int> distribution(1,3);
+	
+	cout<<"choose from the following :->\n1.stone\n2.paper\n3.scissor"<<endl;
+	cin>>me;
+	
+	int comp=distribution(generator);
+	std::cout<<"computer chooses:"<<comp<<std::endl;
+	
+	if(me==comp){
+		cout<<"its a tie"<<endl;
+	}
+	else{
+		if(me==1){
+			if(comp==2){
+				cout<<"you lost"<<endl;
+			}
+			else{
+				cout<<"you won"<<endl;
+			}
+		}
+		else if(me==2){
+			if(comp==3){
+				cout<<"you lost"<<endl;
+			}
+			else{
+				cout<<"you won"<<endl;
+			}
+		}
+		else if(me==3){
+			if(comp==1){
+				cout<<"you lost"<<endl;
+			}
+			else{
+				cout<<"you won"<<endl;
+			}
+		}
+		else{
+			cout<<"the number you choosed is not available "<<endl;
+		}
+	}
+	
+	
+	
+	return 0;
+}
